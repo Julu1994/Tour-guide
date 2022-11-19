@@ -1,0 +1,40 @@
+@mixin btn-mixin {
+    padding: .5rem;
+    border-radius: 0.130rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-default {
+    @include btn-mixin();
+    color: rgb(10, 10, 10);
+    background-color: rgb(255, 253, 253);
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.btn-outline {
+    @include btn-mixin();
+    color: rgb(255, 255, 255);
+    padding: .5rem 1.25rem;
+    background-color: transparent;
+    border: 1px solid rgb(255, 255, 255);
+    transition: all 0.4 ease-out;
+}
+
+.midium {
+    padding: .5rem 1.25rem;
+    font-size: 1.25rem;
+}
+
+.large {
+    padding: .5rem 1.25rem;
+    font-size: 1.25rem;
+}
+
+.medium:hover,
+.large:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(10, 10, 10);
+    transition: all .4s ease-out;
+
+}

@@ -3,7 +3,11 @@ import "./index.scss";
 import { FaArtstation } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import { Button } from "../Common/button";
 const Navbar = () => {
+    const a = () => {
+        console.log("hi");
+    };
     return (
         <nav className="navbar">
             <div className="navbar-container">
@@ -26,6 +30,14 @@ const Navbar = () => {
                     <li>
                         <Link to="/events">Contacts</Link>
                     </li>
+                    <Button
+                        onclick={a}
+                        size={"h"}
+                        style={""}
+                        type={""}
+                        children={"Signup"}
+                        path={"/"}
+                    />
                 </ul>
             </div>
         </nav>
