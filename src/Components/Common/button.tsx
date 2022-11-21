@@ -2,32 +2,27 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./button.scss";
 
-interface props {
+type props = {
     style: string;
-    size: string;
+    size: any;
     children: string;
-    onclick: any;
     path: string;
-    type: any;
-}
+    classBtn: string;
+};
 
 const btnStyle: string[] = ["btn-default", "btn-outline"];
 const btnSize: string[] = ["midium", "large"];
+const btnClass: string[] = ["btnHero"];
 
-export const Button: React.FC<props> = (props) => {
-    const createBtnStyle = btnStyle.includes(props.style)
-        ? props.style
-        : btnStyle[0];
-    const createBtnSize = btnStyle.includes(props.size)
-        ? props.size
-        : btnSize[0];
+export const Button = ({ style, size, children, path, classBtn }: props) => {
+    const createBtnStyle = btnStyle.includes(style) ? style : btnStyle[0];
+    const createBtnSize = btnSize.includes(size) ? size : btnSize[0];
+    const creatClass = btnClass.includes(classBtn) ? classBtn : btnClass[0];
+
     return (
-        <Link to={props.path}>
-            <button
-                className={`${createBtnStyle} ${createBtnSize}`}
-                onClick={props.onclick}
-                type={props.type}>
-                {props.children}
+        <Link className={`${creatClass}`} to={path}>
+            <button className={`${createBtnStyle} ${createBtnSize}`}>
+                {children}
             </button>
         </Link>
     );

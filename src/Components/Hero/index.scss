@@ -1,0 +1,40 @@
+.hero {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.hero-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    position: fixed;
+}
+
+.hero-title {
+    color: rgb(254, 254, 254);
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+
+.btnHero {
+    margin-top: 1rem;
+}
+
+@media(max-width: 960px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+}
+
+@media(max-width: 600px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+}

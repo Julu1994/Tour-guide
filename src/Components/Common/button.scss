@@ -9,7 +9,7 @@
     @include btn-mixin();
     color: rgb(10, 10, 10);
     background-color: rgb(255, 253, 253);
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 254, 254);
 }
 
 .btn-outline {
@@ -22,19 +22,24 @@
 }
 
 .midium {
-    padding: .5rem 1.25rem;
-    font-size: 1.25rem;
+    padding: .5rem 2.5rem;
+    font-size: 1rem;
 }
 
 .large {
-    padding: .5rem 1.25rem;
+    padding: .5rem 5rem;
     font-size: 1.25rem;
 }
 
-.medium:hover,
-.large:hover {
+.btn-outline:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(10, 10, 10);
     transition: all .4s ease-out;
 
+}
+
+.btn-default:hover {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    transition: all .4s ease-out;
 }
