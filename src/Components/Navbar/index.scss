@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+$primary: rgb(255, 255, 255);
+
+@mixin nav-mobile($parcentage) {
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: absolute;
+    background: #2422226c;
+    top: 6rem;
+    left: $parcentage;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+
+}
+
+@mixin common($width, $height, $display) {
+    width: $width;
+    height: $height;
+    display: $display;
+
+}
+
+.navbar {
+    @include common(100%, 6rem, flex);
+    margin: none;
+    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo {
+    color: $primary;
+    justify-self: start;
+    margin-left: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-text {
+    margin-left: .5rem;
+}
+
+.navbar-list {
+    @include common(60vh, 6rem, grid);
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 3rem;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+    justify-content: end;
+    margin-right: 3rem;
+}
+
+.navbar-list-mobile {
+    @include nav-mobile(0);
+}
+
+.navbar-item {
+    color: $primary;
+    height: 3rem;
+    list-style: none;
+}
+
+.navbar-links {
+    @include common(none, 100%, flex);
+    color: $primary;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar-links:hover {
+    border-bottom: 2px solid $primary;
+    transition: all 0.2s ease-out;
+}
+
+
+
+
+
+.navbar-icon {
+    color: $primary;
+    margin-right: 2rem;
+
+}
+
+
+@media (max-width: 960px) {
+    .navbar-list {
+        @include nav-mobile(-100%)
+    }
+
+    .navbar-links {
+        padding: 1rem 0 1rem 0;
+        margin: 2rem 0 2rem 0;
+        font-size: 1.5rem;
+    }
+
+    .navbar-links:hover {
+        background-color: $primary;
+        color: rgb(68, 68, 68);
+    }
+
+}
