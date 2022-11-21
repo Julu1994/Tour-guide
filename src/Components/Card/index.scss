@@ -1,0 +1,82 @@
+@mixin cardGrid ($column, $row, $gap, $areas) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-template-rows: $row;
+    gap: $gap;
+    grid-template-areas: $areas
+}
+
+.card {
+    padding: 4rem;
+    background: #fff;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.card-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    width: 85%;
+    margin: 0 auto;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.card-wrapper {
+    position: relative;
+    margin: 50px 0 45px;
+}
+
+.card-list {
+    @include cardGrid(repeat(6 1fr), 1fr .5fr, 2rem .5rem, "first first first second second second"
+        "third third fourth fourth fifth fifth")
+}
+
+$gridArea: (
+    item-one: first,
+    item-two: second,
+    item-three: third,
+    item-four: fourth,
+    item-five: fifth,
+);
+
+@each $class,
+$grid in $gridArea {
+    .#{$class} {
+        grid-area: $grid;
+    }
+}
+
+
+@media (max-width: 960px) {
+
+    .card-list {
+        @include cardGrid(1fr 1f, 1fr .5fr .5fr, 1rem 1rem, "first first""second third""fourth fifth")
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-container {
+        width: 95%;
+    }
+
+    .card-list {
+        @include cardGrid(1fr, repeat(5 1fr), 2rem 1rem, "first"
+            "second"
+            "third"
+            "fourth"
+            "fifth")
+    }
+
+    h1 {
+        font-size: 1.1rem;
+    }
+}
