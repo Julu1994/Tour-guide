@@ -1,4 +1,45 @@
+@mixin footerGrid ($column, $row, $gap, $areas) {
+    display: grid;
+    grid-template-columns: $column;
+    grid-template-rows: $row;
+    gap: $gap;
+    grid-template-areas: $areas;
+    justify-items: center;
+}
+
 .footer-container {
     padding: 4rem;
-    background: #fff;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+
+    @include footerGrid(repeat(4 1fr), .2fr .3fr 1fr, 2rem .5rem, "first first first first""second second second second"
+        "third  fourth fifth sixth")
+}
+
+.footer-header {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+
+$gridArea: (
+    footer-header: first,
+    footer-subscribe: second,
+    link-section-1: third,
+    link-section-2: fourth,
+    link-section-3: fifth,
+    link-section-4: sixth,
+);
+
+@each $class,
+$grid in $gridArea {
+    .#{$class} {
+        grid-area: $grid;
+        list-style: none;
+    }
+}
+
+.link {
+    padding-top: 1rem;
+    cursor: pointer;
 }
