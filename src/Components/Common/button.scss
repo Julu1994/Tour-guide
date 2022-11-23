@@ -1,6 +1,5 @@
 @mixin btn-mixin {
-    padding: .5rem;
-    border-radius: 0.130rem;
+    border-radius: 2px;
     cursor: pointer;
     outline: none;
 }
@@ -15,7 +14,6 @@
 .btn-outline {
     @include btn-mixin();
     color: rgb(255, 255, 255);
-    padding: .5rem 1.25rem;
     background-color: transparent;
     border: 1px solid rgb(255, 255, 255);
     transition: all 0.4 ease-out;
@@ -29,6 +27,14 @@
 .large {
     padding: .5rem 5rem;
     font-size: 1.25rem;
+}
+
+.extra-large {
+    // padding: .5rem 4.4rem;
+    width: 13rem;
+    font-size: 1rem;
+    height: 2.6rem;
+
 }
 
 .btn-outline:hover {

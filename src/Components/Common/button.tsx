@@ -11,7 +11,7 @@ type props = {
 };
 
 const btnStyle: string[] = ["btn-default", "btn-outline"];
-const btnSize: string[] = ["midium", "large"];
+const btnSize: string[] = ["midium", "large", "extra-large"];
 const btnClass: string[] = ["btnHero"];
 
 export const Button = ({ style, size, children, path, classBtn }: props) => {

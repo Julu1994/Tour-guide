@@ -1,10 +1,16 @@
 import React from "react";
 import "./input.scss";
-
-const Input = () => {
+type props = {
+    style?: string;
+};
+const Input = ({ style }: props) => {
     return (
         <>
-            <input className="input" type="text" value="Your Email" />
+            <input
+                className={`input ${style}`}
+                type="text"
+                value="Your Email"
+            />
         </>
     );
 };

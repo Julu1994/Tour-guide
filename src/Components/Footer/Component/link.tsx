@@ -2,6 +2,7 @@ import React from "react";
 import "./link.scss";
 
 type props = {
+    header: string;
     text1: string;
     text2: string;
     text3: string;
@@ -9,9 +10,10 @@ type props = {
     text5: string;
 };
 
-const Links = ({ text1, text2, text3, text4, text5 }: props) => {
+const Links = ({ header, text1, text2, text3, text4, text5 }: props) => {
     return (
         <>
+            <li className="header">{header}</li>
             <li className="link">{text1}</li>
             <li className="link">{text2}</li>
             <li className="link">{text3}</li>

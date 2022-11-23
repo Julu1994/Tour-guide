@@ -19,6 +19,12 @@
 .footer-header {
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
+    text-align: center;
+}
+
+.footer-input {
+    margin-right: 1rem;
+    width: 13rem;
 }
 
 
@@ -31,6 +37,8 @@ $gridArea: (
     link-section-4: sixth,
 );
 
+
+
 @each $class,
 $grid in $gridArea {
     .#{$class} {
@@ -42,4 +50,56 @@ $grid in $gridArea {
 .link {
     padding-top: 1rem;
     cursor: pointer;
+}
+
+.header {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
+@media(max-width: 960px) {
+    .footer-container {
+        @include footerGrid(1fr 1fr, .2fr .3fr 1fr 1fr, 2rem .5rem, "first first""second second"
+            "third  fourth ""fifth sixth")
+    }
+
+    .footer-subscribe {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+
+    .footer-header {
+        font-size: 1rem;
+    }
+
+    .footer-input {
+        margin-right: 0;
+    }
+
+    .link-section-1 {
+        justify-self: start;
+        text-align: start;
+    }
+
+    .link-section-2 {
+        justify-self: end;
+        text-align: end;
+    }
+
+    .link-section-3 {
+        justify-self: start;
+        text-align: start;
+    }
+
+    .link-section-4 {
+        justify-self: end;
+        text-align: end;
+    }
+
+
 }
