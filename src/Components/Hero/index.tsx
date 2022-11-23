@@ -1,8 +1,12 @@
 import React from "react";
 import "./index.scss";
-import bgVideo from "../../Assets/Videos/milkyway.mp4";
 import { Button } from "../Common/button";
-const Hero = () => {
+
+type props = {
+    video: string;
+};
+
+const Hero = ({ video }: props) => {
     const STYLE = {
         default: "btn-default",
         outline: "btn-outline",
@@ -11,7 +15,7 @@ const Hero = () => {
 
     return (
         <div className="hero">
-            <video className="hero-video" src={bgVideo} autoPlay loop muted />
+            <video className="hero-video" src={video} autoPlay loop muted />
             <h2 className="hero-title">Life is short and the world is wide.</h2>
             <Button
                 classBtn="btnHero"

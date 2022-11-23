@@ -1,3 +1,5 @@
+@import "../../SCSS/main.scss";
+
 @mixin footerGrid ($column, $row, $gap, $areas) {
     display: grid;
     grid-template-columns: $column;
@@ -7,17 +9,22 @@
     justify-items: center;
 }
 
+@mixin link-positin ($position, $textAlign) {
+    justify-self: $position;
+    text-align: $textAlign;
+}
+
 .footer-container {
     padding: 4rem;
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    background: $secondary-color;
+    color: $primary-color;
 
     @include footerGrid(repeat(4 1fr), .2fr .3fr 1fr, 2rem .5rem, "first first first first""second second second second"
         "third  fourth fifth sixth")
 }
 
 .footer-header {
-    color: rgb(255, 255, 255);
+    color: $primary-color;
     font-size: 1.5rem;
     text-align: center;
 }
@@ -47,16 +54,17 @@ $grid in $gridArea {
     }
 }
 
+.link-header {
+    font-size: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+}
+
 .link {
     padding-top: 1rem;
     cursor: pointer;
 }
 
-.header {
-    font-size: 1.5rem;
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: 600;
-}
 
 @media(max-width: 960px) {
     .footer-container {
@@ -82,23 +90,19 @@ $grid in $gridArea {
     }
 
     .link-section-1 {
-        justify-self: start;
-        text-align: start;
+        @include link-positin(start, start)
     }
 
     .link-section-2 {
-        justify-self: end;
-        text-align: end;
+        @include link-positin(end, end)
     }
 
     .link-section-3 {
-        justify-self: start;
-        text-align: start;
+        @include link-positin(start, start)
     }
 
     .link-section-4 {
-        justify-self: end;
-        text-align: end;
+        @include link-positin(end, end)
     }
 
 
