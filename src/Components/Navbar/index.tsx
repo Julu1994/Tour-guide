@@ -44,7 +44,7 @@ const Navbar = () => {
                     <Link
                         onClick={handleClose}
                         className="navbar-links"
-                        to="/events">
+                        to="/contacts">
                         Contacts
                     </Link>
                 </li>
