@@ -1,15 +1,16 @@
 import React from "react";
 import "./input.scss";
 type props = {
-    style?: string;
+    cls?: string;
+    placeHolder?: string;
 };
-const Input = ({ style }: props) => {
+const Input = ({ cls, placeHolder }: props) => {
     return (
         <>
             <input
-                className={`input ${style}`}
+                placeholder={placeHolder}
+                className={`input ${cls}`}
                 type="text"
-                value="Your Email"
             />
         </>
     );

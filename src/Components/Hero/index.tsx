@@ -4,31 +4,20 @@ import { Button } from "../Common/button";
 
 type props = {
     video: string;
+    title?: string;
 };
 
-const Hero = ({ video }: props) => {
-    const STYLE = {
-        default: "btn-default",
-        outline: "btn-outline",
-    };
+const Hero = ({ video, title }: props) => {
     const SIZE = window.innerWidth > 960 ? "large" : "midium";
 
     return (
         <div className="hero">
             <video className="hero-video" src={video} autoPlay loop muted />
-            <h2 className="hero-title">Life is short and the world is wide.</h2>
-            <Button
-                classBtn="btnHero"
-                path={"/"}
-                size={SIZE}
-                style={STYLE.default}>
+            <h2 className="hero-title">{title}</h2>
+            <Button classBtn="btnHero" path={"/"} size={SIZE} cls="btn-default">
                 Explore
             </Button>
-            <Button
-                classBtn="btnHero"
-                path={"/"}
-                size={SIZE}
-                style={STYLE.outline}>
+            <Button classBtn="btnHero" path={"/"} size={SIZE} cls="btn-outline">
                 SignUp
             </Button>
         </div>

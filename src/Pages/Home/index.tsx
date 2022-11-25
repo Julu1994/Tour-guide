@@ -5,7 +5,10 @@ import bgVideo from "../../Assets/Videos/milkyway.mp4";
 const Home = () => {
     return (
         <div>
-            <Hero video={bgVideo} />
+            <Hero
+                video={bgVideo}
+                title={"Life is short and the world is wide."}
+            />
             <Card />
         </div>
     );

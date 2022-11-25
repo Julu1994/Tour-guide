@@ -15,6 +15,7 @@
     height: 100%;
     z-index: -100;
     position: fixed;
+
 }
 
 .hero-title {
@@ -26,6 +27,8 @@
 .btnHero {
     margin-top: 1rem;
 }
+
+
 
 @media(max-width: 960px) {
     .hero-title {

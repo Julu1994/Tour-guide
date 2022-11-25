@@ -5,13 +5,6 @@ import Input from "../Common/input";
 import Links from "./Component/link";
 
 const Footer = () => {
-    const STYLE = {
-        default: "btn-default",
-        outline: "btn-outline",
-    };
-    const input = {
-        clss: "footer-input",
-    };
     return (
         <div className="footer-container">
             <h3 className="footer-header">
@@ -19,12 +12,12 @@ const Footer = () => {
                 info
             </h3>
             <div className="footer-subscribe">
-                <Input style={input.clss} />
+                <Input cls="footer-input" placeHolder="Email" />
                 <Button
                     classBtn="btnHero"
                     path={"/"}
-                    size={"extra-large"}
-                    style={STYLE.outline}>
+                    size={"extra"}
+                    cls="btn-outline">
                     Subscribe
                 </Button>
             </div>
