@@ -1,0 +1,59 @@
+.signup {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.signup-video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    position: fixed;
+
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    row-gap: 1rem;
+}
+
+.signup-title {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
+}
+
+.signup-name {
+    border-radius: .2rem;
+}
+
+.signup-email {
+    border-radius: .2rem;
+}
+
+.signup-password {
+    border-radius: .2rem;
+}
+
+.signup-btn {
+    font-weight: 500;
+    border-radius: .2rem;
+    border: none;
+    font-size: 1rem;
+    padding: .5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(148, 142, 142);
+        color: rgb(245, 248, 250);
+
+    }
+}
