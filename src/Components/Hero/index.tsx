@@ -14,10 +14,18 @@ const Hero = ({ video, title }: props) => {
         <div className="hero">
             <video className="hero-video" src={video} autoPlay loop muted />
             <h2 className="hero-title">{title}</h2>
-            <Button classBtn="btnHero" path={"/"} size={SIZE} cls="btn-default">
+            <Button
+                classBtn="btnHero"
+                path={"/services"}
+                size={SIZE}
+                cls="btn-default">
                 Explore
             </Button>
-            <Button classBtn="btnHero" path={"/"} size={SIZE} cls="btn-outline">
+            <Button
+                classBtn="btnHero"
+                path={"/signup"}
+                size={SIZE}
+                cls="btn-outline">
                 SignUp
             </Button>
         </div>

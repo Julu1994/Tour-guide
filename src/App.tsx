@@ -1,28 +1,14 @@
 import React from "react";
 import "./App.scss";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Components/Navbar";
-import Home from "./Pages/Home";
-import Footer from "./Components/Footer";
-import Services from "./Pages/Services";
-import Contacts from "./Pages/Contacts";
-import Signup from "./Pages/Signup";
+import Loader from "./Components/Loader";
+
+import Routing from "./Routing";
 
 function App() {
-    return (
-        <div className="App">
-            <Router>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/contacts" element={<Contacts />} />
-                    <Route path="/signup" element={<Signup />} />
-                </Routes>
-                <Footer />
-            </Router>
-        </div>
-    );
+    const [loading, setLoading] = React.useState(true);
+    const loadingHandler = () => setLoading(false);
+    setTimeout(loadingHandler, 2000);
+    return <div className="App">{loading ? <Loader /> : <Routing />}</div>;
 }
 
 export default App;

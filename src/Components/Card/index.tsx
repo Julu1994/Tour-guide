@@ -17,8 +17,8 @@ const Card = () => {
     };
     return (
         <div className="card">
-            <h1>Best holidy destination for 2023</h1>
             <div className="card-container">
+                <h1>Best holidy destination for 2023</h1>
                 <div className="card-wrapper">
                     <ul className="card-list">
                         <CardModel
