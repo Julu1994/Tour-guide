@@ -57,3 +57,15 @@
 
     }
 }
+
+@media(max-width: 960px) {
+    .signup-form {
+        width: 60%;
+    }
+}
+
+@media(max-width: 600px) {
+    .signup-form {
+        width: 80%;
+    }
+}

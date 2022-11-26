@@ -1,9 +1,8 @@
 import React from "react";
 import "./index.scss";
 import { FaArtstation } from "react-icons/fa";
-import { TiTimes } from "react-icons/ti";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-router-dom";
+import ManuIcon from "./Component/manuIcon";
 
 const Navbar = () => {
     const [toggle, setToggle] = React.useState(false);
@@ -59,11 +58,7 @@ const Navbar = () => {
             </ul>
             {!screenSize() && (
                 <div className="navbar-icon" onClick={handleToggle}>
-                    {toggle ? (
-                        <TiTimes size={45} />
-                    ) : (
-                        <GiHamburgerMenu size={30} />
-                    )}
+                    <ManuIcon />
                 </div>
             )}
         </nav>
